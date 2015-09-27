@@ -1,0 +1,35 @@
+{
+  "name": "pullplaylist",
+  "description": "Youtube video downloader in pure javascript.",
+  "keywords": [
+    "youtube",
+    "video",
+    "download"
+  ],
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sameid/pullplaylist.git"
+  },
+  "author": "Sameid Usmani (http://sameidusmani.com)",
+  "main": "run.js",
+  "dependencies": {
+    "ytdl-core": "*",
+    "youtube-api": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/sameid/pullplaylist/raw/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/sameid/pullplaylist/issues"
+  },
+  "homepage": "https://github.com/sameid/pullplaylist",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}

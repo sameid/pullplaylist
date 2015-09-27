@@ -2,18 +2,6 @@ var youtube = require("youtube-api");
 var ytdl = require("ytdl-core");
 var fs = require("fs");
 
-youtube.authenticate({
-  type: "key",
-  key: "your youtube api key here"
-});
-
-var cache = [];
-
-function pullPlayList(playlistId, fileName){
-  pullPlayListRecursive(playlistId, fileName, 0, null);
-}
-
-
 function pullPlayListRecursive (playlistId, fileName, callStackSize, pageToken){
   youtube.playlistItems.list({
     part:"snippet",
@@ -42,4 +30,14 @@ function pullPlayListRecursive (playlistId, fileName, callStackSize, pageToken){
 }
 
 
-pullPlayList("playlist id here", "name of mp3 here");
+exports.pullPlaylist = function (apiKey, playlistId, fileName){
+
+  youtube.authenticate({
+    type: "key",
+    key: apiKey
+  });
+
+  pullPlayListRecursive(playlistId, fileName, 0, null);
+}
+
+// pullPlayList("playlist id here", "name of mp3 here");
